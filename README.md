@@ -1,4 +1,4 @@
-##Código utilizado ao longo do módulo de React do curso de desenvolvimento
+## Código utilizado ao longo do módulo de React do curso de desenvolvimento
 
 Para executar o código:
 
