@@ -8,8 +8,8 @@ const Layout =()=>{
         <Container>
         <Navbar.Brand >Meu APP</Navbar.Brand>
             <Nav.Link><Link to="/">Home</Link></Nav.Link>
-            <Nav.Link ><Link to="/carros">Carros</Link></Nav.Link>
-            <Nav.Link ><Link to="/todolist">To Do List</Link></Nav.Link>
+            <Nav.Link ><Link to="/carros">Carros</Link></Nav.Link> 
+            <Nav.Link ><Link to="/auth">Login</Link></Nav.Link>
 
         </Container>
     </Navbar>
