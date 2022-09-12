@@ -11,3 +11,8 @@ export const getToken = () =>{
 export const logout = ()=>{
     localStorage.removeItem(TokenKey);
 }
+
+
+export const isAuthenticated = () =>{
+  return (typeof getToken() !== 'undefined');
+}

@@ -6,6 +6,7 @@ import NotFound from "./Pages/NotFound";
 import ToDoList from "./Components/ToDoList/ToDoList";
 import Componente1 from "./Components/UseContext/Componente1";
 import Auth from './Pages/Auth'
+import Moeda from "./Pages/Moeda";
 function App() {
   return (
     <BrowserRouter>
@@ -17,6 +18,7 @@ function App() {
                   <Route path="todolist" element={<ToDoList/>}/>
                   <Route path="useContext" element={<Componente1/>}/>
                   <Route path="auth" element={<Auth/>}/>
+                  <Route path="moeda" element={<Moeda/>}/>
           </Route>
 
       </Routes>
