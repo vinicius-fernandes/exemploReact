@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {saveMoeda,getMoedas} from './../../Services/Moeda'
-function Create({setComponenteAtual}) {
+import {getMoeda,saveEdit} from './../../Services/Moeda'
 
-   const [paises, setPaises] = useState(
+function Edit({setComponenteAtual,idMoeda}){
+
+    const [paises, setPaises] = useState(
         [
             { id: 1, nome: "Brasil" },
             { id: 2, nome: "Portugal" },
@@ -14,7 +15,15 @@ function Create({setComponenteAtual}) {
     const [name,setName] = useState("");
 
     const [paisesSelecionados,setPaisesSelecionados] = useState([]);
+    
 
+
+    useEffect(()=>{
+        const moeda = getMoeda(idMoeda);
+        setName(moeda.nome);
+        setPaisesSelecionados(moeda.paises);
+
+    },[])
     
     const UpdatePaisesSelecionados= (event,pais)=>{
        if(event.target.checked){
@@ -27,22 +36,22 @@ function Create({setComponenteAtual}) {
        }
     }
 
-    const create = (event) =>{
+    const edit = (event) =>{
         event.preventDefault();
         const moeda= {
             nome:name,
             paises:paisesSelecionados
         }
-        saveMoeda(moeda);
+        saveEdit(idMoeda,moeda);
         setComponenteAtual("Index");
     }
 
     return <div className="d-flex flex-column align-items-center">
-        <h1>Cadastro de moeda</h1>
+        <h1>Edição de moeda</h1>
         <Button variant="primary" onClick={()=>setComponenteAtual("Index")}>Voltar</Button>
         <Form className="col-3 mt-5">
             <Form.Label>Nome moeda</Form.Label>
-            <Form.Control type="text" name="name" onChange={((e)=>setName(e.target.value))}></Form.Control>
+            <Form.Control type="text" name="name" value={name} onChange={((e)=>setName(e.target.value))}></Form.Control>
             <Form.Label>Países</Form.Label>
             {paises.map((pais) =>
                 <Form.Check
@@ -51,14 +60,14 @@ function Create({setComponenteAtual}) {
                     type='checkbox'
                     id={pais.id}
                     label={pais.nome}
+                    checked={paisesSelecionados.filter((paisSelecionado)=>paisSelecionado.id===pais.id).length>0}
                 />
             )}
-            <Button variant="success" type="submit" onClick={(event)=>create(event)}>Enviar</Button>
+            <Button variant="success" type="submit" onClick={(event)=>edit(event)}>Enviar</Button>
 
         </Form>
 
     </div>
-
 }
 
-export default Create;
+export default Edit;

@@ -7,6 +7,7 @@ import ToDoList from "./Components/ToDoList/ToDoList";
 import Componente1 from "./Components/UseContext/Componente1";
 import Auth from './Pages/Auth'
 import Moeda from "./Pages/Moeda";
+import ContasContabeis from './Pages/ContasContabeis'
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
                   <Route path="useContext" element={<Componente1/>}/>
                   <Route path="auth" element={<Auth/>}/>
                   <Route path="moeda" element={<Moeda/>}/>
+                  <Route path="contasContabeis" element={<ContasContabeis/>}/>
           </Route>
 
       </Routes>

@@ -17,6 +17,7 @@ const Layout = () => {
                         <Nav.Link ><Link to="/carros">Carros</Link></Nav.Link>
                         <Nav.Link ><Link to="/auth">Login</Link></Nav.Link>
                         <Nav.Link ><Link to="/moeda">Moeda</Link></Nav.Link>
+                        <Nav.Link ><Link to="/contasContabeis">Contas Contabéis</Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
