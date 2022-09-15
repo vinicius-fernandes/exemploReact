@@ -1,11 +1,11 @@
-
-
+import Create from './../Components/ContasContabeis/Create'
+import {useState} from 'react';
 function ContasContabeis(){
-
-    return <h1>
-
-        Contas contabeis
-    </h1>
+    const [componenteAtual,setComponentAtual] = useState('Index');
+    return <>
+    <Create setComponenteAtual= {setComponentAtual}/>
+    
+    </>
 
 
 }
