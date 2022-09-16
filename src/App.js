@@ -8,6 +8,7 @@ import Componente1 from "./Components/UseContext/Componente1";
 import Auth from './Pages/Auth'
 import Moeda from "./Pages/Moeda";
 import ContasContabeis from './Pages/ContasContabeis'
+import Transacoes from "./Pages/Transacoes";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
                   <Route path="auth" element={<Auth/>}/>
                   <Route path="moeda" element={<Moeda/>}/>
                   <Route path="contasContabeis" element={<ContasContabeis/>}/>
+                  <Route path="transacoes" element={<Transacoes/>}/>
           </Route>
 
       </Routes>

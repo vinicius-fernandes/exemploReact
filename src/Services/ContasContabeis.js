@@ -7,7 +7,7 @@ export const saveContaContabil = (contaContabil)=>{
      if(!Array.isArray(contasContabeis)){
         contasContabeis = [];
     }
-    if(contasContabeis.lenght==0){
+    if(contasContabeis.length===0){
         contaContabil.id = 1;
     }
     else{
@@ -20,19 +20,19 @@ export const saveContaContabil = (contaContabil)=>{
 }
 
 export const deleteContaContabil = (id)=>{
-    const contasContabeis = getContaContabeis();
+    const contasContabeis = getContasContabeis();
     const newMoedas = contasContabeis.filter((contaContabil)=>contaContabil.id!==id);
     localStorage.setItem(contasContabeisKey,JSON.stringify(newMoedas))
 }
 
 export const getContaContabil = (id)=>{
-    let contasContabeis = getContaContabeis();
+    let contasContabeis = getContasContabeis();
     return contasContabeis.find((contaContabil)=>contaContabil.id===id);
 }
 
 
 export const saveEdit = (id,contaContabil)=>{
-    let contasContabeis = getContaContabeis();
+    let contasContabeis = getContasContabeis();
 
     const moedaIndex = contasContabeis.findIndex((moedaToEdit)=>moedaToEdit.id===id);
 
@@ -44,7 +44,7 @@ export const saveEdit = (id,contaContabil)=>{
 }
 
 
-export const getContaContabeis = ()=>{
+export const getContasContabeis = ()=>{
 
     let contasContabeis = JSON.parse(localStorage.getItem(contasContabeisKey))
 
