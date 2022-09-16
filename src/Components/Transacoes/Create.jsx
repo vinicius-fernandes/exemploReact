@@ -3,7 +3,7 @@ import { Form,Button } from 'react-bootstrap';
 import {getMoedas} from './../../Services/Moeda';
 import {getContasContabeis} from './../../Services/ContasContabeis'
 import {saveTransacao} from './../../Services/Transacoes'
-function Create() {
+function Create({setComponenteAtual}) {
     const [transacao, setTransacao] = useState(
         {
             data: '',
@@ -33,11 +33,13 @@ function Create() {
     const save = (event)=>{
         event.preventDefault();
         saveTransacao(transacao);
+        setComponenteAtual('Index');
     }
 
 
     return <div className="d-flex flex-column align-items-center">
         <h1>Cadastro de transação</h1>
+        <Button variant="primary" onClick={()=>setComponenteAtual('Index')}>Voltar</Button>
         <Form onSubmit={(event)=>save(event)}>
             <Form.Label>Data</Form.Label>
             <Form.Control type="date" name="data" onChange={(event)=>updateTransacao(event)}></Form.Control>

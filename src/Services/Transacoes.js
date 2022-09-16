@@ -31,3 +31,4 @@ export const getTransacoes = ()=>{
 
     return transacoes;
 }
+
